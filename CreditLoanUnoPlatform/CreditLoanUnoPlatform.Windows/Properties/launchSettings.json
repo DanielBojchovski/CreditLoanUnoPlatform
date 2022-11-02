@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "CreditLoanUnoPlatform.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

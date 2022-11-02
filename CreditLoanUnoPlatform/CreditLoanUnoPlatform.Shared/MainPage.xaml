@@ -1,0 +1,290 @@
+﻿<Page
+    x:Class="CreditLoanUnoPlatform.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CreditLoanUnoPlatform"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Border 
+            Background="#222222"
+            Grid.RowSpan="12"
+            Grid.ColumnSpan="6"/>
+
+        <TextBlock 
+            Grid.Row="0"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Text="Credit / Loan Calculator"
+            FontSize="28"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Padding="0,20,0,0"/>
+
+        <TextBlock 
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Credit amount"
+            FontSize="20"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox 
+            x:Name="TextBoxCreditAmount"
+            Grid.Row="1"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap"
+            FontSize="18"
+            IsEnabled="True"
+            TextAlignment="Center"
+            />
+        
+        <TextBlock 
+            x:Name="TextBlockCreditAmountError"
+            Grid.Row="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Text="Error! Enter only positive numeric values for credit amount!"
+            FontSize="10"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="Red"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Collapsed"/>
+
+        <TextBlock 
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="Interest Rate"
+            FontSize="20"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox 
+            x:Name="TextBoxInterestRate"
+            Grid.Row="3"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap"
+            FontSize="18"
+            IsEnabled="True"
+            TextAlignment="Center"
+            />
+
+        <TextBlock 
+            x:Name="TextBlockInterestRateError"
+            Grid.Row="4"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Text="Error! Enter only positive numeric values for interest rate!"
+            FontSize="10"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="Red"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Collapsed"/>
+
+        <TextBlock 
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="Years"
+            FontSize="20"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox 
+            x:Name="TextBoxYears"
+            Grid.Row="5"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap"
+            FontSize="18"
+            IsEnabled="True"
+            TextAlignment="Center"
+            />
+
+        <TextBlock 
+            x:Name="TextBlockYearsError"
+            Grid.Row="6"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Text="Error! Enter only positive numeric values for years!"
+            FontSize="10"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="Red"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Collapsed"/>
+
+        <Button
+            x:Name ="ButtonCalculate"
+            Grid.Row="7"
+            Grid.Column="2"
+            Content = "Calculate"
+            Background="#4c0121"
+            Foreground="White"
+            BorderThickness="5"
+            Width = "150"
+            Height="40"
+            Margin="10"
+            Padding="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="ButtonCalculate_Click"
+            />
+
+        <Button
+            x:Name ="ButtonReset"
+            Grid.Row="7"
+            Grid.Column="3"
+            Content = "Reset"
+            Background="#4c0121"
+            Foreground="White"
+            BorderThickness="5"
+            Width = "150"
+            Height="40"
+            Margin="10"
+            Padding="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="ButtonReset_Click"
+            />
+
+        <TextBlock 
+            Grid.Row="8"
+            Grid.Column="1"
+            Text="Total Interest"
+            FontSize="20"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox 
+            x:Name="TextBoxTotalInterest"
+            Grid.Row="8"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap"
+            FontSize="18"
+            IsEnabled="True"
+            TextAlignment="Center"
+            IsReadOnly="True"
+            />
+
+        <TextBlock 
+            Grid.Row="9"
+            Grid.Column="1"
+            Text="Total To Return"
+            FontSize="20"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox 
+            x:Name="TextBoxTotalToReturn"
+            Grid.Row="9"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap"
+            FontSize="18"
+            IsEnabled="True"
+            TextAlignment="Center"
+            IsReadOnly="True"
+            />
+
+        <TextBlock 
+            Grid.Row="10"
+            Grid.Column="1"
+            Text="Monthly Return"
+            FontSize="20"
+            FontFamily="Georgia"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox 
+            x:Name="TextBoxMonthlyReturn"
+            Grid.Row="10"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="300"
+            Height="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextWrapping="Wrap"
+            FontSize="18"
+            IsEnabled="True"
+            TextAlignment="Center"
+            IsReadOnly="True"
+            />
+    </Grid>
+</Page>
